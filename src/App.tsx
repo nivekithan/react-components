@@ -1,26 +1,40 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { GreenButton } from "./pages/github-green-button";
+import { GithubGreenButton } from "./pages/github-green-button";
 
-if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  document.documentElement.classList.add("dark");
-} else {
-  document.documentElement.classList.add("light");
-}
 export const App = () => {
   return (
+    <div>
+      {Navbar}
       <Router>
         <Switch>
           <Route path="/github-green-button">
-            <GreenButton />
+            <GithubGreenButton />
           </Route>
           <Route path="/">
             <Home />
           </Route>
         </Switch>
       </Router>
+    </div>
   );
 };
+
+const toggleDarkMode = (e: React.MouseEvent<HTMLButtonElement>) => {
+  e.preventDefault();
+  document.documentElement.classList.toggle("dark");
+};
+
+export const Navbar = (
+  <nav className="flex justify-center">
+    <button
+      onClick={toggleDarkMode}
+      className="dark:text-light-100 text-dark-800"
+    >
+      Dark
+    </button>
+  </nav>
+);
 
 export const Home = () => {
   return (
