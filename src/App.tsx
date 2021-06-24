@@ -1,25 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { GithubGreenButton } from "./pages/github-green-button";
-import { GithubRepoNav } from "./pages/github-repo-nav";
 
 export const App = () => {
   return (
     <div>
       {Navbar}
-      <Router>
-        <Switch>
-          <Route path="/github-green-button">
-            <GithubGreenButton />
-          </Route>
-          <Route path="/github-repo-nav">
-            <GithubRepoNav />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
+      <Router></Router>
     </div>
   );
 };
@@ -29,7 +15,7 @@ const toggleDarkMode = (e: React.MouseEvent<HTMLButtonElement>) => {
   document.documentElement.classList.toggle("dark");
 };
 
-export const Navbar = (
+export const Navbar = ( 
   <nav className="flex justify-center">
     <button
       onClick={toggleDarkMode}
