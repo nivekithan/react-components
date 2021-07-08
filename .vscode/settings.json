@@ -1,5 +1,6 @@
 {
-    "cSpell.words": [
-        "windicss"
-    ]
+  "cSpell.words": ["windicss"],
+  "css.validate": false,
+  "windicss.enableAttrUtilityCompletion": false,
+  "windicss.enableAttrVariantCompletion": false,
 }
